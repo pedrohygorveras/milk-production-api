@@ -1,0 +1,25 @@
+services:
+  backend:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - ENVIRONMENT=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app
+      - node_modules:/usr/app/node_modules
+
+networks:
+  api:
+    name: api
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./node_modules
