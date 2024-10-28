@@ -15,21 +15,6 @@ This project is a RESTful API developed for the BovControl challenge. The API en
 - **SOLID Principles**: Adherence to SOLID design principles for building scalable, maintainable, and testable code.
 - **Docker**: Containerization of the application for consistent environments, simplified deployment, and scalability.
 
-### Additional Details
-
-1. **Currency Converter Integration**:
-   We use the **currency-converter-lt** library to dynamically convert currency values (e.g., BRL to USD) based on real-time exchange rates. This ensures that our application can handle internationalization and currency conversions efficiently.
-
-2. **Winston Logging System**:
-   **Winston** is integrated as the logging system, providing a robust and flexible solution for managing logs in different environments (e.g., development, testing, production). Logs are saved in files and can be customized to log different levels like `info`, `error`, `warn`, and more.
-
-3. **SOLID Principles**:
-   The application architecture adheres to **SOLID** principles, ensuring that the code is modular, reusable, and easy to maintain. This makes the codebase easier to extend and test, promoting a clean and efficient code structure.
-
-4. **Docker for Containerization**:
-   The application is containerized using **Docker**, allowing for consistent environments across different stages (development, testing, production). Docker ensures that the application can run anywhere with minimal setup, simplifying deployment and scaling processes.
-
-
 ## 📚 Project Structure - SOLID Principles
 
 The project is organized following the SOLID principles to ensure best practices, maintainability, and scalability:
