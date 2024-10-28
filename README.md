@@ -107,10 +107,10 @@ To set up and run the BovControl API locally, follow the steps below:
    ```
 
    This will launch the application, and you should see the following output:
-   MongoDB connected successfully
-   Routes configured successfully.
 
-   Server is running on http://localhost:3000
+   - MongoDB connected successfully
+   - Routes configured successfully.
+   - Server is running on http://localhost:3000
 
 6. Access the API:
    - Swagger documentation is available at http://localhost:3000/api/docs/.
