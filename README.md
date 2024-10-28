@@ -142,5 +142,7 @@ To set up and run the BovControl API locally, follow the steps below:
 This setup ensures the application is ready to be developed, tested, and extended further following the SOLID principles for maintainability and scalability.
 
 
+## Swagger: API Documentation
+![screencapture-localhost-3000-api-docs-2024-10-28-14_02_49](https://github.com/user-attachments/assets/164ab1c0-768c-4d92-a5f7-626cc321cf6b)
 
 
