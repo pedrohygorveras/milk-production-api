@@ -1,7 +1,7 @@
 import express from "express";
 import { authController } from "../controllers/auth.js";
 import { check } from "express-validator";
-import { ValidateNoExtraFieldsMiddleware } from "../middlewares/ValidateNoExtraFields.js";
+import { ValidateNoExtraFieldsMiddleware } from "../middlewares/validateExtraFields.js";
 
 class AuthRoutes {
   constructor() {
