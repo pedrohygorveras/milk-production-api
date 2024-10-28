@@ -6,6 +6,12 @@ import { milkProductionRepository } from "../repositories/milkProduction.js";
 import CC from "currency-converter-lt";
 
 class PaymentService {
+  /**
+   * Converts a string ID to ObjectId format, logging an error if the format is invalid.
+   * @param {string} id - ID to format.
+   * @returns {ObjectId} - Formatted ObjectId.
+   * @throws {Error} - If the ID format is invalid.
+   */
   _formatObjectId(id) {
     try {
       return ObjectId.createFromHexString(id);
@@ -15,23 +21,35 @@ class PaymentService {
     }
   }
 
+  /**
+   * Calculates the price per liter based on farm details and monthly volume.
+   * Includes transport cost and seasonal bonuses.
+   * @param {Object} farm - The farm data.
+   * @param {number} volume - Total milk volume in liters.
+   * @param {number} month - The month for which the price is calculated.
+   * @returns {number} - Calculated price per liter.
+   */
   _calculatePricePerLiter(farm, volume, month) {
-    // Preço base e bônus por semestre
     const isFirstSemester = month >= 1 && month <= 6;
     const basePrice = isFirstSemester ? 1.8 : 1.95;
     const bonus = !isFirstSemester && volume > 10000 ? 0.01 : 0;
 
-    // Cálculo do custo por km
     const distance = farm.distance_to_factory_km;
     const costPerKm = distance <= 50 ? 0.05 : 0.06;
     const transportCost = costPerKm * distance;
 
-    // Cálculo final
     const pricePerLiter = basePrice - transportCost + (bonus * volume) / volume;
-
     return pricePerLiter;
   }
 
+  /**
+   * Retrieves the price per liter for a farm for a specific month and year,
+   * and converts the price to USD.
+   * @param {string} farmId - The ID of the farm.
+   * @param {number} year - The year for the calculation.
+   * @param {number} month - The month for the calculation.
+   * @returns {Promise<Object>} - Price per liter in BRL and USD, total payment, and total volume.
+   */
   async getPricePerLiterByFarmAndMonth(farmId, year, month) {
     const farmIdFormatted = this._formatObjectId(farmId);
     const farm = await farmRepository.getFarmById(farmIdFormatted);
@@ -88,6 +106,13 @@ class PaymentService {
     }
   }
 
+  /**
+   * Retrieves the price per liter for each month of a specified year for a farm,
+   * converting each monthly price to USD.
+   * @param {string} farmId - The ID of the farm.
+   * @param {number} year - The year for the calculations.
+   * @returns {Promise<Array>} - Monthly prices per liter and total volumes in BRL and USD.
+   */
   async getPricePerLiterByFarmAndYear(farmId, year) {
     const farmIdFormatted = this._formatObjectId(farmId);
     const farm = await farmRepository.getFarmById(farmIdFormatted);
@@ -154,6 +179,11 @@ class PaymentService {
     return convertedPayments;
   }
 
+  /**
+   * Creates a new payment record, calculating total volume and payment.
+   * @param {Object} paymentData - Data for the payment record.
+   * @returns {Promise<Object>} - The created payment data.
+   */
   async createPayment(paymentData) {
     logger.info("Creating a new payment record");
     const { farm_id, year, month } = paymentData;
@@ -167,7 +197,6 @@ class PaymentService {
     const startOfMonth = new Date(Date.UTC(year, month - 1, 1, 0, 0, 0));
     const endOfMonth = new Date(Date.UTC(year, month, 0, 23, 59, 59));
 
-    // Obtém o volume total de leite produzido no mês especificado
     const milkProductions =
       await milkProductionRepository.getMilkProductionsByYearAndMonth(
         farmIdFormatted,
@@ -184,14 +213,12 @@ class PaymentService {
       0,
     );
 
-    // Calcular o preço por litro com base nos critérios
     const pricePerLiter = this._calculatePricePerLiter(
       farm,
       totalVolumeLiters,
       month,
     );
 
-    // Calcular o pagamento total
     const totalPayment = pricePerLiter * totalVolumeLiters;
 
     const paymentDataFormatted = {
@@ -207,6 +234,12 @@ class PaymentService {
     return await paymentRepository.createPayment(paymentDataFormatted);
   }
 
+  /**
+   * Updates a payment record with new data.
+   * @param {string} paymentId - ID of the payment to update.
+   * @param {Object} paymentData - Updated payment data.
+   * @returns {Promise<Object>} - The updated payment data.
+   */
   async updatePayment(paymentId, paymentData) {
     logger.info(`Updating payment with ID: ${paymentId}`);
     const paymentIdFormatted = this._formatObjectId(paymentId);
@@ -216,6 +249,11 @@ class PaymentService {
     );
   }
 
+  /**
+   * Deletes a payment record.
+   * @param {string} paymentId - ID of the payment to delete.
+   * @returns {Promise<Object>} - Result of the deletion.
+   */
   async deletePayment(paymentId) {
     logger.info(`Deleting payment with ID: ${paymentId}`);
     const paymentIdFormatted = this._formatObjectId(paymentId);

@@ -8,6 +8,8 @@
   "files.insertFinalNewline": true,
   "files.autoSave": "onFocusChange",
   "cSpell.words": [
+    "costPerKm",
+    "Km",
     "maxsize"
   ]
 }
