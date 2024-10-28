@@ -23,7 +23,7 @@ class SwaggerConfig {
         },
         servers: [
           {
-            url: "http://64.227.27.236:8030/",
+            url: "http://178.128.204.65:8030/",
             description: "Production",
           },
           {

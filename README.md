@@ -5,7 +5,7 @@ This project is a RESTful API developed for the BovControl challenge. The API en
 ## Deploy
 The BovControl API is available at the following link:
 
-[Production Environment](http://64.227.27.236:8030)
+[Production Environment](http://178.128.204.65:8030)
 
 
 ## 🚀 Technologies Used
