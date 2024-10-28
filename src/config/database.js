@@ -1,6 +1,9 @@
 import { logger } from "../utils/logger.js";
 import { MongoClient } from "mongodb";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 /**
  * Class responsible for managing the MongoDB connection.
  * This class follows the Singleton pattern to ensure only one
