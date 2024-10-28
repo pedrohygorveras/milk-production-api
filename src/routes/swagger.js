@@ -23,8 +23,12 @@ class SwaggerConfig {
         },
         servers: [
           {
-            url: "http://localhost:3000/", // Base URL for the API
-            description: "Local server", // Description for the local server
+            url: "https://milk-production-api.onrender.com/",
+            description: "Production",
+          },
+          {
+            url: "http://localhost:3000/",
+            description: "Local server",
           },
         ],
         components: {

@@ -2,6 +2,12 @@
 
 This project is a RESTful API developed for the BovControl challenge. The API enables the management of farms and farmers, with functionality to register daily milk production, query volumes, and calculate prices based on specific business rules.
 
+## Deploy
+The BovControl API is available at the following link:
+
+[Production Environment](https://milk-production-api.onrender.com/api/docs/)
+
+
 ## 🚀 Technologies Used
 
 - **JavaScript (ES6)**: Language for the backend logic.
