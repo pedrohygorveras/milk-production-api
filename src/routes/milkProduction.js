@@ -30,13 +30,6 @@ class MilkProductionRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -113,14 +106,6 @@ class MilkProductionRoutes {
      *     tags: [MilkProductions]
      *     security:
      *       - bearerAuth: []
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *     requestBody:
      *       required: true
      *       content:
@@ -178,13 +163,6 @@ class MilkProductionRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -245,13 +223,6 @@ class MilkProductionRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:

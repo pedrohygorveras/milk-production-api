@@ -23,7 +23,7 @@ class SwaggerConfig {
         },
         servers: [
           {
-            url: "https://milk-production-api.onrender.com/",
+            url: "http://64.227.27.236:8030/",
             description: "Production",
           },
           {

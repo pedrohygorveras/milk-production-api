@@ -15,15 +15,9 @@ class UserRoutes {
      *   get:
      *     summary: Get all users
      *     tags: [Users]
+     *     security:
+     *       - bearerAuth: []
      *     description: Retrieve a list of all users. Requires a valid JWT token.
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer <your_jwt_token>
-     *         description: Bearer token to authorize the request
      *     responses:
      *       200:
      *         description: A list of users
@@ -60,13 +54,6 @@ class UserRoutes {
      *       - bearerAuth: []
      *     description: Deletes a user by their ID. Requires a valid JWT token.
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer <your_jwt_token>
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:

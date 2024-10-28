@@ -30,13 +30,6 @@ class PaymentRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -116,13 +109,6 @@ class PaymentRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -194,14 +180,6 @@ class PaymentRoutes {
      *     tags: [Payments]
      *     security:
      *       - bearerAuth: []
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *     requestBody:
      *       required: true
      *       content:
@@ -248,13 +226,6 @@ class PaymentRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -327,13 +298,6 @@ class PaymentRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:

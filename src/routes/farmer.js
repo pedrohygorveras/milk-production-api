@@ -30,14 +30,6 @@ class FarmerRoutes {
      *     security:
      *       - bearerAuth: []
      *     description: Retrieve a list of all farmers. Requires a valid JWT token.
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *     responses:
      *       200:
      *         description: A list of farmers
@@ -84,13 +76,6 @@ class FarmerRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -122,14 +107,6 @@ class FarmerRoutes {
      *     tags: [Farmers]
      *     security:
      *       - bearerAuth: []
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *     requestBody:
      *       required: true
      *       content:
@@ -178,13 +155,6 @@ class FarmerRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -246,13 +216,6 @@ class FarmerRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:

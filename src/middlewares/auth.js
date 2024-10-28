@@ -16,7 +16,7 @@ class AuthMiddleware {
   verifyToken() {
     return (req, res, next) => {
       // Extracts the token from the auth header
-      const token = req.headers.auth?.split(" ")[1];
+      const token = req.headers.authorization?.split(" ")[1];
       if (!token) {
         return res
           .status(401)

@@ -30,13 +30,6 @@ class FarmRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -66,14 +59,6 @@ class FarmRoutes {
      *     tags: [Farms]
      *     security:
      *       - bearerAuth: []
-     *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *     requestBody:
      *       required: true
      *       content:
@@ -142,13 +127,6 @@ class FarmRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
@@ -227,13 +205,6 @@ class FarmRoutes {
      *     security:
      *       - bearerAuth: []
      *     parameters:
-     *       - in: header
-     *         name: auth
-     *         required: true
-     *         schema:
-     *           type: string
-     *           example: Bearer your_jwt_token
-     *         description: Bearer token to authorize the request
      *       - in: path
      *         name: id
      *         schema:
